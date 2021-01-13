@@ -5,10 +5,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netlify Golang Functions</title>
+
+    <style>
+        label {
+            display: block;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Placeholder</h1>
+
+    <form action="/.netlify/functions/formailer" enctype="multipart/form-data" method="POST">
+        <label>Name <input name="Name" type="text"></label>
+        <label>Subject <input name="Subject" type="text"></label>
+        <label>Message <textarea name="Message" cols="30" rows="10"></textarea></label>
+        <label>Photo <input name="Photo" type="file"></label>
+    </form>
 </body>
 
 </html>
