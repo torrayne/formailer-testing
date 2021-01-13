@@ -1,3 +1,8 @@
 [build]
+    build = "cd functions && go mod tidy && go build -o formailer"
     functions = "functions"
     publish = "public"
+
+
+[build.environment]
+    GO_IMPORT_PATH="github.com/kaganjd/netlify-functions-workshop"
