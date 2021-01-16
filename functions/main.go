@@ -118,17 +118,14 @@ func parseData(contentType, body string) (data map[string]string, attachments []
 
 		fmt.Println(header)
 		fmt.Println(boundary)
-		fmt.Println(string(decodedBody))
+		fmt.Println(body)
 
 		reader := multipart.NewReader(bytes.NewReader(decodedBody), boundary)
 		for {
 			var part *multipart.Part
 			part, err = reader.NextPart()
-			if err == io.EOF {
-				err = nil
-				break
-			}
 			if err != nil {
+				fmt.Println(data, attachments)
 				return
 			}
 
@@ -153,7 +150,6 @@ func parseData(contentType, body string) (data map[string]string, attachments []
 		err = errors.New("invalid content type")
 	}
 
-	fmt.Println(data, attachments)
 	return
 }
 
@@ -224,7 +220,7 @@ func Handler(ctx context.Context, request events.APIGatewayProxyRequest) (*event
 	}
 
 	data, attachments, err := parseData(request.Headers["content-type"], request.Body)
-	if err != nil {
+	if err != nil && err != io.EOF {
 		return respond(http.StatusBadRequest, err), nil
 	}
 
