@@ -116,10 +116,7 @@ func parseData(contentType, body string) (data map[string]string, attachments []
 			return
 		}
 
-		fmt.Println(header)
-		fmt.Println(body)
 		decodedBody = append(decodedBody, '\n')
-		fmt.Println(decodedBody)
 
 		reader := multipart.NewReader(bytes.NewReader(decodedBody), boundary)
 		for {
@@ -222,6 +219,10 @@ func Handler(ctx context.Context, request events.APIGatewayProxyRequest) (*event
 	data, attachments, err := parseData(request.Headers["content-type"], request.Body)
 	if err != nil && err != io.EOF {
 		return respond(http.StatusBadRequest, err), nil
+	}
+
+	if _, ok := data["_form_name"]; !ok {
+		return respond(http.StatusBadRequest, errors.New("Missing _form_name input")), nil
 	}
 
 	form := getForm(data["_form_name"])
