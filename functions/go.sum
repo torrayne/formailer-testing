@@ -14,8 +14,8 @@ github.com/cpuguy83/go-md2man/v2 v2.0.0/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsr
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/djatwood/formailer v0.1.7 h1:9HazzqZZpnAW69JRcTG9TmIyl53ygB12dVyXPsrhOG4=
-github.com/djatwood/formailer v0.1.7/go.mod h1:pVCqNmwYbn4tv13UjqC6DpPY44Bk0sjpgUelgrC1bXQ=
+github.com/djatwood/formailer v0.1.8 h1:41Mfl45DlFUAGKSWTWleYOD9PtiJfG06VqJ9jweok2U=
+github.com/djatwood/formailer v0.1.8/go.mod h1:pVCqNmwYbn4tv13UjqC6DpPY44Bk0sjpgUelgrC1bXQ=
 github.com/gorilla/css v1.0.0 h1:BQqNyPTi50JCFMTw/b67hByjMVXZRwGha6wxVGkeihY=
 github.com/gorilla/css v1.0.0/go.mod h1:Dn721qIggHpt4+EFCcTLTU/vk5ySda2ReITrtgBl60c=
 github.com/pmezard/go-difflib v1.0.0 h1:4DBwDE0NGyQoBHbLQYPwSUPoCMWR5BEzIk/f1lZbAQM=
