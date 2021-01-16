@@ -116,7 +116,7 @@ func parseData(contentType, body string) (data map[string]string, attachments []
 			return
 		}
 
-		decodedBody = append(decodedBody, '\n')
+		decodedBody = append(decodedBody, []byte("\r\n")...)
 
 		fmt.Println(header)
 		fmt.Println(body)
