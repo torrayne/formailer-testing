@@ -125,6 +125,7 @@ func parseData(contentType, body string) (data map[string]string, attachments []
 			var part *multipart.Part
 			part, err = reader.NextPart()
 			if err == io.EOF {
+				err = nil
 				break
 			}
 			if err != nil {
@@ -152,6 +153,7 @@ func parseData(contentType, body string) (data map[string]string, attachments []
 		err = errors.New("invalid content type")
 	}
 
+	fmt.Println(data, attachments)
 	return
 }
 
