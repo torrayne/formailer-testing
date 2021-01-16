@@ -116,8 +116,9 @@ func parseData(contentType, body string) (data map[string]string, attachments []
 			return
 		}
 
+		decodedBody = append(decodedBody, '\n')
+
 		fmt.Println(header)
-		fmt.Println(boundary)
 		fmt.Println(body)
 
 		reader := multipart.NewReader(bytes.NewReader(decodedBody), boundary)
@@ -125,7 +126,6 @@ func parseData(contentType, body string) (data map[string]string, attachments []
 			var part *multipart.Part
 			part, err = reader.NextPart()
 			if err != nil {
-				fmt.Println(data, attachments)
 				return
 			}
 
