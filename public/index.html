@@ -28,7 +28,8 @@
             margin-bottom: 40px;
         }
 
-        input {
+        input,
+        textarea {
             padding: 7px 14px;
             font-size: 1.1rem;
             border-radius: 4px;
@@ -49,7 +50,7 @@
 
 <body>
     <h2>JSON</h2>
-    <form action="/.netlify/functions/formailer" enctype="multipart/form-data" method="POST">
+    <form class="json" action="/.netlify/functions/formailer" method="POST">
         <!-- META -->
         <input type="checkbox" name="faxonly" value="1" style="display:none !important" tabindex="-1"
             autocomplete="off">
@@ -67,7 +68,7 @@
     </form>
 
     <h2>URL Encoded</h2>
-    <form action="/.netlify/functions/formailer" enctype="multipart/form-data" method="POST">
+    <form action="/.netlify/functions/formailer" method="POST">
         <!-- META -->
         <input type="checkbox" name="faxonly" value="1" style="display:none !important" tabindex="-1"
             autocomplete="off">
@@ -103,6 +104,23 @@
 
         <input type="submit" value="Submit">
     </form>
+
+    <script>
+        const jsonForm = document.querySelector("form.json")
+        jsonForm.addEventListener("submit", event => {
+            event.preventDefault()
+
+            const data = {}
+            for (let d of new FormData(jsonForm)) {
+                data[d[0]] = d[1]
+            }
+
+            fetch(jsonForm.getAttribute("action"), {
+                method: "POST",
+                body: JSON.stringify(data)
+            }).then(r => r.text()).then(console.log).catch(console.error)
+        })
+    </script>
 </body>
 
 </html>
