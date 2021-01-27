@@ -6,24 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netlify Golang Functions</title>
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
     <style>
+        body {
+            margin: 0;
+            padding: 40px;
+            font-family: 'Noto Sans', sans-serif;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            grid-gap: 20px 10px;
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        input {
+            padding: 7px 14px;
+            font-size: 1.1rem;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-shadow: none;
+        }
+
+        input[type="submit"] {
+            grid-column: 2;
+            font-size: 1.2rem;
+        }
+
         label {
-            display: block;
+            font-size: 1.2rem;
         }
     </style>
 </head>
 
 <body>
-    <h1>Placeholder</h1>
-
+    <h2>JSON</h2>
     <form action="/.netlify/functions/formailer" enctype="multipart/form-data" method="POST">
-        <label>Name <input name="Name" type="text"></label>
-        <label>Subject <input name="Subject" type="text"></label>
-        <label>Message <textarea name="Message" cols="30" rows="10"></textarea></label>
-        <label>Photo <input name="Photo" type="file"></label>
-        <input type="checkbox" name="faxonly" value="1" style="display:none !important" tabindex="-1" autocomplete="off">
+        <!-- META -->
+        <input type="checkbox" name="faxonly" value="1" style="display:none !important" tabindex="-1"
+            autocomplete="off">
         <input type="hidden" name="_form_name" value="contact">
         <input type="hidden" name="_redirect" value="/success">
+
+        <label for="json_name">Name</label>
+        <input id="json_name" name="Name" type="text">
+        <label for="json_subject">Subject</label>
+        <input id="json_subject" name="Subject" type="text">
+        <label for="json_message">Message</label>
+        <textarea id="json_message" name="Message" cols="30" rows="10"></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>URL Encoded</h2>
+    <form action="/.netlify/functions/formailer" enctype="multipart/form-data" method="POST">
+        <!-- META -->
+        <input type="checkbox" name="faxonly" value="1" style="display:none !important" tabindex="-1"
+            autocomplete="off">
+        <input type="hidden" name="_form_name" value="contact">
+        <input type="hidden" name="_redirect" value="/success">
+
+        <label for="url_name">Name</label>
+        <input id="url_name" name="Name" type="text">
+        <label for="url_subject">Subject</label>
+        <input id="url_subject" name="Subject" type="text">
+        <label for="url_message">Message</label>
+        <textarea id="url_message" name="Message" cols="30" rows="10"></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Multipart</h2>
+    <form action="/.netlify/functions/formailer" enctype="multipart/form-data" method="POST">
+        <!-- META -->
+        <input type="checkbox" name="faxonly" value="1" style="display:none !important" tabindex="-1"
+            autocomplete="off">
+        <input type="hidden" name="_form_name" value="contact">
+        <input type="hidden" name="_redirect" value="/success">
+
+        <label for="multipart_name">Name</label>
+        <input id="multipart_name" name="Name" type="text">
+        <label for="multipart_subject">Subject</label>
+        <input id="multipart_subject" name="Subject" type="text">
+        <label for="multipart_message">Message</label>
+        <textarea id="multipart_message" name="Message" cols="30" rows="10"></textarea>
+        <label for="multipart_photo">Photo</label>
+        <input id="multipart_photo" name="Photo" type="file">
+
         <input type="submit" value="Submit">
     </form>
 </body>
