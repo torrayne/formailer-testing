@@ -12,8 +12,8 @@ github.com/cpuguy83/go-md2man/v2 v2.0.0/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsr
 github.com/davecgh/go-spew v1.1.0/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
 github.com/davecgh/go-spew v1.1.1 h1:vj9j/u1bqnvCEfJOwUhtlOARqs3+rkHYY13jYWTU97c=
 github.com/davecgh/go-spew v1.1.1/go.mod h1:J7Y8YcW2NihsgmVo/mv3lAwl/skON4iLHjSsI+c5H38=
-github.com/djatwood/formailer v0.3.0 h1:keBiea3CBtQZ0q8/FR9IKbQvPqqngIpcSDapMRRxkHM=
-github.com/djatwood/formailer v0.3.0/go.mod h1:DZCoLC8uXMXtk5kXmu8Y4xscOFAjEg9dMGkJrHjUPuI=
+github.com/djatwood/formailer v0.3.1 h1:DCaJK/ZUNm7RDBeSE6EzxiVLxwrwbuutblpgHVicp1c=
+github.com/djatwood/formailer v0.3.1/go.mod h1:DZCoLC8uXMXtk5kXmu8Y4xscOFAjEg9dMGkJrHjUPuI=
 github.com/gorilla/css v1.0.0 h1:BQqNyPTi50JCFMTw/b67hByjMVXZRwGha6wxVGkeihY=
 github.com/gorilla/css v1.0.0/go.mod h1:Dn721qIggHpt4+EFCcTLTU/vk5ySda2ReITrtgBl60c=
 github.com/joho/godotenv v1.3.0 h1:Zjp+RcGpHhGlrMbJzXTrZZPrWj+1vfm90La1wgB6Bhc=
