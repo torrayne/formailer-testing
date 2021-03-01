@@ -23,8 +23,8 @@ func handle(w http.ResponseWriter, r *http.Request) {
 	cfg := make(formailer.Config)
 	cfg.Set(&formailer.Form{
 		Name:    "Contact",
-		To:      "datwood@wildwoodhealth.org",
-		From:    "donotreply@wildwoodhealth.org",
+		To:      "daniel@atwood.io",
+		From:    "daniel@atwood.io",
 		Subject: "New Contact Form Submission",
 	})
 
