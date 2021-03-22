@@ -4,16 +4,16 @@ import (
 	"net/http"
 
 	"github.com/djatwood/formailer"
+	"github.com/djatwood/formailer/handlers"
 )
 
 func Handle(w http.ResponseWriter, r *http.Request) {
-	cfg := make(formailer.Config)
-	cfg.Set(&formailer.Form{
-		Name:    "Contact",
+	contact := formailer.Form{Name: "Contact"}
+	contact.AddEmail(formailer.Email{
 		To:      "daniel@atwood.io",
 		From:    "daniel@atwood.io",
 		Subject: "New Contact Form Submission",
 	})
 
-	cfg.Vercel(w, r)
+	handlers.Vercel(formailer.DefaultConfig, w, r)
 }

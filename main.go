@@ -1,32 +1,18 @@
 package main
 
 import (
-	"net/http"
-
+	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/djatwood/formailer"
-	"github.com/joho/godotenv"
+	"github.com/djatwood/formailer/handlers"
 )
 
 func main() {
-	err := godotenv.Load()
-	if err != nil {
-		panic(err)
-	}
-
-	fs := http.Dir("./public")
-	http.HandleFunc("/api/", handle)
-	http.Handle("/", http.FileServer(fs))
-	http.ListenAndServe(":4120", nil)
-}
-
-func handle(w http.ResponseWriter, r *http.Request) {
-	cfg := make(formailer.Config)
-	cfg.Set(&formailer.Form{
-		Name:    "Contact",
+	contact := formailer.Form{Name: "Contact"}
+	contact.AddEmail(formailer.Email{
 		To:      "daniel@atwood.io",
 		From:    "daniel@atwood.io",
 		Subject: "New Contact Form Submission",
 	})
 
-	cfg.Vercel(w, r)
+	lambda.Start(handlers.Netlify(formailer.DefaultConfig))
 }

@@ -1,4 +1,4 @@
 [build]
-    build = "cd functions && go build -o formailer"
+    build = "go build -o functions/formailer"
     functions = "functions"
     publish = "public"
