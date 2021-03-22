@@ -15,5 +15,6 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 		Subject: "New Contact Form Submission",
 	})
 
+	formailer.Add(contact)
 	handlers.Vercel(formailer.DefaultConfig, w, r)
 }
