@@ -1,7 +1,6 @@
 package api
 
 import (
-	"log"
 	"net/http"
 
 	"github.com/djatwood/formailer"
@@ -17,6 +16,5 @@ func Handle(w http.ResponseWriter, r *http.Request) {
 	})
 
 	formailer.Add(contact)
-	log.Print(formailer.DefaultConfig)
 	handlers.Vercel(formailer.DefaultConfig, w, r)
 }
