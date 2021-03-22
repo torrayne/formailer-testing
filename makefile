@@ -2,4 +2,5 @@ netlify:
 	find api/netlify/ -name "*.go" -exec ./netlify-functions.sh {} \;; \
 	sed -i 's/API_URL/.netlify\/functions/g' ./public/index.html
 vercel:
-	sed -i 's/API_URL/api\/vercel/g' ./public/index.html
+	cp -r functions/vercel/ api/; \
+	sed -i 's/API_URL/api/g' ./public/index.html
