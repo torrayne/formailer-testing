@@ -14,5 +14,6 @@ func main() {
 		Subject: "New Contact Form Submission",
 	})
 
+	formailer.Add(contact)
 	lambda.Start(handlers.Netlify(formailer.DefaultConfig))
 }
