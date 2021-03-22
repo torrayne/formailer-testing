@@ -1,4 +1,0 @@
-[build]
-    build = "go build -o functions/formailer"
-    functions = "functions"
-    publish = "public"
