@@ -3,8 +3,8 @@ package api
 import (
 	"net/http"
 
-	"github.com/djatwood/formailer"
-	"github.com/djatwood/formailer/handlers"
+	"github.com/torrayne/formailer"
+	"github.com/torrayne/formailer/handlers"
 )
 
 func Handle(w http.ResponseWriter, r *http.Request) {
