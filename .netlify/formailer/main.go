@@ -9,8 +9,8 @@ import (
 func main() {
 	contact := formailer.Form{Name: "Contact"}
 	contact.AddEmail(formailer.Email{
-		To:      "daniel@atwood.io",
-		From:    "daniel@atwood.io",
+		To:      "rayne@atwood.io",
+		From:    "rayne@atwood.io",
 		Subject: "New Contact Form Submission",
 	})
 

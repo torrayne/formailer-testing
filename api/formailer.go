@@ -10,8 +10,8 @@ import (
 func Handle(w http.ResponseWriter, r *http.Request) {
 	contact := formailer.New("Contact")
 	contact.AddEmail(formailer.Email{
-		To:      "daniel@atwood.io",
-		From:    "daniel@atwood.io",
+		To:      "rayne@atwood.io",
+		From:    "rayne@atwood.io",
 		Subject: "New Contact Form Submission",
 	})
 
