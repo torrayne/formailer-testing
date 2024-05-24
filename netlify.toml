@@ -1,0 +1,8 @@
+[build]
+  command = "make netlify"
+  publish = "public"
+  functions = "functions" 
+
+[dev]
+  publish = "public"
+  functions = "functions" 
