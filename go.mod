@@ -2,7 +2,7 @@ module github.com/torrayne/formailer-example
 
 go 1.22
 
-require github.com/djatwood/formailer v0.5.4
+require github.com/djatwood/formailer v0.6.0
 
 require (
 	github.com/PuerkitoBio/goquery v1.6.0 // indirect
