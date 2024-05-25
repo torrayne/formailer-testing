@@ -1,6 +1,9 @@
 *.env
-.vercel
+
+# Netlify
+.netlify/
 /functions/
 
-# Local Netlify folder
-.netlify/
+# Vercel
+.vercel
+/api/
