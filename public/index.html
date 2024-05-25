@@ -50,7 +50,7 @@
 
 <body>
     <h2>JSON</h2>
-    <form class="json" action="/formailer" method="POST">
+    <form class="json" action="/.netlify/functions/formailer" method="POST">
         <!-- META -->
         <input type="checkbox" name="faxonly" value="1" style="display:none !important" tabindex="-1"
             autocomplete="off">
@@ -67,7 +67,7 @@
     </form>
 
     <h2>URL Encoded</h2>
-    <form action="/formailer" method="POST">
+    <form action="/.netlify/functions/formailer" method="POST">
         <!-- META -->
         <input type="checkbox" name="faxonly" value="1" style="display:none !important" tabindex="-1"
             autocomplete="off">
@@ -84,7 +84,7 @@
     </form>
 
     <h2>Multipart</h2>
-    <form action="/formailer" enctype="multipart/form-data" method="POST">
+    <form action="/.netlify/functions/formailer" enctype="multipart/form-data" method="POST">
         <!-- META -->
         <input type="checkbox" name="faxonly" value="1" style="display:none !important" tabindex="-1"
             autocomplete="off">
