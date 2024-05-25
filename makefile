@@ -1,2 +1,2 @@
 vercel:
-	cp -r functions/vercel/ api/vercel
+	cp -r vercel/ api/
