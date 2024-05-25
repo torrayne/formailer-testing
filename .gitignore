@@ -6,4 +6,4 @@
 
 # Vercel
 .vercel
-/api/
+# /api/
